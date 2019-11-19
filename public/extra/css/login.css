@@ -1,0 +1,45 @@
+/*
+pit rgb
+azul oscuro: 14,42,87
+azul claro: 0,271,214
+*/
+
+.btn{
+  border-radius: 0px;
+  background-color: rgb(14,87,42);
+  color: white;
+  font-size:25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card{
+ border-radius: 0px;
+}
+
+.form-control{
+ border-radius: 0px;
+}
+
+body{
+  margin-top: 150px;
+  background-color: rgb(216,216,216);
+}
+
+i{
+  color: white;
+}
+
+.input-group-text{
+  background-color: rgb(14,87,42);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input{
+  font-size: 20px;
+  border-radius: 0px;
+}
+
+.card-header{
+  background-color: rgb(14,87,42);
+  color: white;
+}

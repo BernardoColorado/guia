@@ -1,0 +1,3 @@
+app/src/Config/Config.json
+app/composer.lock
+app/vendor/*
