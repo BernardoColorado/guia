@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 15-10-2019 a las 17:07:56
+-- Tiempo de generación: 20-11-2019 a las 00:23:00
 -- Versión del servidor: 5.7.27-0ubuntu0.18.04.1
 -- Versión de PHP: 7.2.19-0ubuntu0.18.04.2
 
@@ -15,6 +15,189 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `admision_unam` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `admision_unam`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `capitulo`
+--
+
+DROP TABLE IF EXISTS `capitulo`;
+CREATE TABLE `capitulo` (
+  `id` int(11) NOT NULL,
+  `capitulo` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `indice` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `idTema` int(11) NOT NULL,
+  `idMateria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Truncar tablas antes de insertar `capitulo`
+--
+
+TRUNCATE TABLE `capitulo`;
+--
+-- Volcado de datos para la tabla `capitulo`
+--
+
+INSERT INTO `capitulo` (`id`, `capitulo`, `indice`, `idTema`, `idMateria`) VALUES
+(1, 'Teoría Celular', '1', 1, 1),
+(2, 'Estructura Celular', '2', 1, 1),
+(3, 'Anabolismo y catabolismo', '1', 2, 1),
+(4, 'Fotosíntesis', '2', 2, 1),
+(5, 'Respiración Anaerobia', '3', 2, 1),
+(6, 'Respiración Aerobia', '4', 2, 1),
+(7, 'Ciclo Celular', '1', 3, 1),
+(8, 'Reproducción Celular', '2', 3, 1),
+(9, 'Reproducción a Nivel Organismo', '3', 3, 1),
+(10, 'Teorías para explicar el origen de la vida', '1', 5, 1),
+(11, 'Teorías para explicar el proceso evolutivo', '2', 5, 1),
+(12, 'Evidencias de la evolución: paleontologia', '3', 5, 1),
+(13, 'Consecuencias de la evolución: adaptación ', '4', 5, 1),
+(14, 'Adaptación y evolución orgánica', '5', 5, 1),
+(15, 'Estructura del ecosistema', '1', 6, 1),
+(16, 'Dinámica del Ecosistema', '2', 6, 1),
+(17, 'Deterioro Ambiental', '3', 6, 1),
+(18, 'Materia', '1', 7, 2),
+(19, 'Estructura de la Materia', '2', 7, 2),
+(20, 'Tabla Periódica', '3', 7, 2),
+(21, 'Concepto de Molécula', '4', 7, 2),
+(22, 'Reacción Química', '5', 7, 2),
+(23, 'Cantidad de sustancia y su unidad el mol', '6', 7, 2),
+(24, 'Generalidades', '1', 8, 2),
+(25, 'Ácidos y Bases', '2', 8, 2),
+(26, 'Disuoluciones', '3', 8, 2),
+(27, 'Contaminación del agua', '4', 8, 2),
+(28, 'Importancia y aplicaciones del agua para la humanidad', '5', 8, 2),
+(29, 'Generalidades', '1', 9, 2),
+(30, 'Reacciones del Oxigeno', '2', 9, 2),
+(31, 'Reacciones de óxido-reducción', '3', 9, 2),
+(32, 'Ciclos de oxigeno, nitrógeno y carbono', '4', 9, 2),
+(33, 'Contaminación del Aire', '5', 9, 2),
+(34, 'El concepto de cambio de entalpia', '1', 10, 2),
+(35, 'Reacciones químicas endotermicas y exotermicas', '2', 10, 2),
+(36, 'Equilibrio químico y el principio de Le Chatelier', '3', 10, 2),
+(37, 'Velocidad de reacción y los factores que influyen en ella', '4', 10, 2),
+(43, 'Características del Carbono', '1', 11, 2),
+(44, 'Alcanos, Alquenos, Alquinos e hidrocarburos cíclicos', '2', 11, 2),
+(45, 'Grupos funcionales: alcohol, éter, aldehído, cetona ácido', '3', 11, 2),
+(46, 'Reacciones Orgánicas', '4', 11, 2),
+(47, 'Carbohidratos', '1', 12, 2),
+(48, 'Lipidos', '2', 12, 2),
+(49, 'Proteínas', '3', 12, 2),
+(50, 'Vitaminas y minerales: fuentes de importancia', '4', 12, 2),
+(51, 'Caracteristicas de los fenómenos mecanicos', '1', 13, 3),
+(52, 'Movimiento rectilíneo uniforme', '2', 13, 3),
+(53, 'Movimiento uniformemente acelerado', '3', 13, 3),
+(54, 'Factores que cambian la estructura o el estado de movimiento', '1', 14, 3),
+(55, 'El concepto de fuerza', '2', 14, 3),
+(56, 'Carácter Vectorial de la fuerza', '3', 14, 3),
+(57, 'Superposición de fuerzas', '4', 14, 3),
+(58, 'Primera Ley de Newton', '5', 14, 3),
+(59, 'Segunda Ley de Newton', '6', 14, 3),
+(60, 'Tercera ley de Newton', '7', 14, 3),
+(61, 'Equilibrio rotacional y traslacional. Fuerza y torca', '8', 14, 3),
+(62, 'Ley de la fuerza en un un resorte (Ley de Hooke)', '9', 14, 3),
+(63, 'Ley de la Gravitación Universal. Movimiento Planetario', '10', 14, 3),
+(64, 'Concepto de trabajo mecanico', '1', 15, 3),
+(65, 'Concepto de potencia', '2', 15, 3),
+(66, 'Energía cinetica', '3', 15, 3),
+(67, 'Energía potencial', '4', 15, 3),
+(68, 'Conservación de la energía mecánica', '5', 15, 3),
+(69, 'Conservación del ímpetu', '6', 15, 3),
+(70, 'Colisiones entre partículas en una dimensión', '7', 15, 3),
+(71, 'Procesos disipativos', '8', 15, 3),
+(72, 'Calor y Temperatura', '1', 16, 3),
+(73, 'Teoría cinética de los gases', '2', 16, 3),
+(74, 'Caracterización de las ondas mecánicas', '1', 17, 3),
+(75, 'Reflexión y refracción', '2', 17, 3),
+(76, 'Difracción e interferencia de ondas', '3', 17, 3),
+(77, 'Energía de una onda incidente y de las ondas de transmisión', '4', 17, 3),
+(78, 'Efectos cualitativos entre cuerpos cargados electricamente', '1', 18, 3),
+(79, 'Ley de Coulomb Campo eléctrico ', '2', 18, 3),
+(80, 'Ley de Ohm y potencia eléctrica', '3', 18, 3),
+(81, 'Circuitos', '4', 18, 3),
+(82, 'Campo magnético', '5', 18, 3),
+(83, 'Introducción electromagnética', '6', 18, 3),
+(84, 'Relación entre campo magnético y eléctrico', '7', 18, 3),
+(85, 'Inducción de campos', '8', 18, 3),
+(86, 'La luz como onda electromagnética', '9', 18, 3),
+(87, 'Espectro electromagnético', '10', 18, 3),
+(88, 'Ley de Ampere-Maxwell', '11', 18, 3),
+(89, 'Ley de Faraday-Henry', '12', 18, 3),
+(90, 'Fluidos en reposo', '1', 19, 3),
+(91, 'Fluidos en movimiento', '2', 19, 3),
+(92, 'Reflexión y refracción de la luz', '1', 20, 3),
+(93, 'Espejos planos y esféricos', '2', 20, 3),
+(94, 'Lentes convergentes y divergentes', '3', 20, 3),
+(95, 'Punto de vista contemporáneo (dualidad)', '4', 20, 3),
+(96, 'Estructura atómica', '1', 21, 3),
+(97, 'Física Nuclear', '2', 21, 3),
+(98, 'Otras formas de energía', '3', 21, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materia`
+--
+
+DROP TABLE IF EXISTS `materia`;
+CREATE TABLE `materia` (
+  `materia` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `img` varchar(32) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Truncar tablas antes de insertar `materia`
+--
+
+TRUNCATE TABLE `materia`;
+--
+-- Volcado de datos para la tabla `materia`
+--
+
+INSERT INTO `materia` (`materia`, `id`, `img`) VALUES
+('Biología', 1, 'biology.jpg'),
+('Química', 2, 'chemistry.jpg'),
+('Física', 3, 'physics.jpg'),
+('Matemáticas', 4, 'math.jpg'),
+('Geografía', 5, 'geography.jpg'),
+('Historia Universal', 6, 'universal-history.jpg'),
+('Historia de México', 7, 'mexico-history.jpg'),
+('Literatura', 8, 'literature.jpg'),
+('Español', 9, 'spanish.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `slide`
+--
+
+DROP TABLE IF EXISTS `slide`;
+CREATE TABLE `slide` (
+  `id` int(11) NOT NULL,
+  `indice` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `idMateria` int(11) NOT NULL,
+  `idTema` int(11) NOT NULL,
+  `idCapitulo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Truncar tablas antes de insertar `slide`
+--
+
+TRUNCATE TABLE `slide`;
+--
+-- Volcado de datos para la tabla `slide`
+--
+
+INSERT INTO `slide` (`id`, `indice`, `idMateria`, `idTema`, `idCapitulo`) VALUES
+(1, '1', 1, 1, 1),
+(2, '2', 1, 1, 1),
+(3, '3', 1, 1, 1),
+(4, '1', 1, 1, 2),
+(5, '2', 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -110,140 +293,35 @@ INSERT INTO `tema` (`tema`, `id`, `idMateria`, `indice`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materia`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `materia`;
-CREATE TABLE `materia` (
-  `materia` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `img` varchar(32) COLLATE utf8_unicode_ci NOT NULL
+  `nombre` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `apellidoPaterno` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `apellidoMeterno` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(64) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Truncar tablas antes de insertar `materia`
+-- Truncar tablas antes de insertar `usuario`
 --
 
-TRUNCATE TABLE `materia`;
---
--- Volcado de datos para la tabla `materia`
---
-
-INSERT INTO `materia` (`materia`, `id`, `img`) VALUES
-('Biología', 1, 'biologia.jpg'),
-('Química', 2, 'chemistry.jpg'),
-('Física', 3, 'fisica.jpg'),
-('Matemáticas', 4, 'matematicas.jpg'),
-('Geografía', 5, 'geografia.jpg'),
-('Historia Universal', 6, 'historia_universal.jpg'),
-('Historia de México', 7, 'historia_mexico.jpg'),
-('Literatura', 8, 'literatura.jpg'),
-('Español', 9, 'español.jpg');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `capitulo`
---
-
-DROP TABLE IF EXISTS `capitulo`;
-CREATE TABLE `capitulo` (
-  `id` int(11) NOT NULL,
-  `capitulo` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `indice` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
-  `idTema` int(11) NOT NULL,
-  `idMateria` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Truncar tablas antes de insertar `capitulo`
---
-
-TRUNCATE TABLE `capitulo`;
---
--- Volcado de datos para la tabla `capitulo`
---
-
-INSERT INTO `capitulo` (`id`, `capitulo`, `indice`, `idTema`, `idMateria`) VALUES
-(1, 'Teoría Celular', '1', 1, 1),
-(2, 'Estructura Celular', '2', 1, 1),
-(3, 'Anabolismo y catabolismo', '1', 2, 1),
-(4, 'Fotosíntesis', '2', 2, 1),
-(5, 'Respiración Anaerobia', '3', 2, 1),
-(6, 'Respiración Aerobia', '4', 2, 1),
-(7, 'Ciclo Celular', '1', 3, 1),
-(8, 'Reproducción Celular', '2', 3, 1),
-(9, 'Reproducción a Nivel Organismo', '3', 3, 1),
-(10, 'Teorías para explicar el origen de la vida', '1', 5, 1),
-(11, 'Teorías para explicar el proceso evolutivo', '2', 5, 1),
-(12, 'Evidencias de la evolución: paleontologia', '3', 5, 1),
-(13, 'Consecuencias de la evolución: adaptación ', '4', 5, 1),
-(14, 'Adaptación y evolución orgánica', '5', 5, 1),
-
-(15, 'Estructura del ecosistema', '1', 6, 1),
-(16, 'Dinámica del Ecosistema', '2', 6, 1),
-(17, 'Deterioro Ambiental', '3', 6, 1),
-
-(18, 'Materia', '1', 7, 2),
-(19, 'Estructura de la Materia', '2', 7, 2),
-(20, 'Tabla Periódica', '3', 7, 2),
-(21, 'Concepto de Molécula', '4', 7, 2),
-(22, 'Reacción Química', '5', 7, 2),
-(23, 'Cantidad de sustancia y su unidad el mol', '6', 7, 2),
-
-(24, 'Generalidades', '1', 8, 2),
-(25, 'Ácidos y Bases', '2', 8, 2),
-(26, 'Disuoluciones', '3', 8, 2),
-(27, 'Contaminación del agua', '4', 8, 2),
-
-(28, 'Importancia y aplicaciones del agua para la humanidad', '5', 8, 2),
-(29, 'Generalidades', '1', 9, 2),
-(30, 'Reacciones del Oxigeno', '2', 9, 2),
-(31, 'Reacciones de óxido-reducción', '3', 9, 2),
-(32, 'Ciclos de oxigeno, nitrógeno y carbono', '4', 9, 2),
-(33, 'Contaminación del Aire', '5', 9, 2),
-
-(34, 'El concepto de cambio de entalpia', '1', 10, 2),
-(35, 'Reacciones químicas endotermicas y exotermicas', '2', 10, 2),
-(36, 'Equilibrio químico y el principio de Le Chatelier', '3', 10, 2),
-
-(37, 'Velocidad de reacción y los factores que influyen en ella', '4', 10, 2),
-(43, 'Características del Carbono', '1', 11, 2),
-(44, 'Alcanos, Alquenos, Alquinos e hidrocarburos cíclicos', '2', 11, 2),
-(45, 'Grupos funcionales: alcohol, éter, aldehído, cetona ácido', '3', 11, 2),
-(46, 'Reacciones Orgánicas', '4', 11, 2),
-
-(47, 'Carbohidratos', '1', 12, 2),
-(48, 'Lipidos', '2', 12, 2),
-(49, 'Proteínas', '3', 12, 2),
-(50, 'Vitaminas y minerales: fuentes de importancia', '4', 12, 2),
-
-(51, 'Caracteristicas de los fenómenos mecanicos','1',13,3),
-(52, 'Caracteristicas de los fenómenos mecanicos','2',13,3),
-(53, 'Caracteristicas de los fenómenos mecanicos','3',13,3),
-
-(54, 'Factores que cambian la estructura o el estado de movimiento', '1', 13, 3),
-(55, 'El concepto de fuerza', '2', 13, 3),
-(56, 'Carácter Vectorial de la fuerza', '3', 13, 3),
-(57, 'Superposición de fuerzas', '4', 13, 3),
-(58, 'Primera Ley de Newton', '5', 13, 3),
-(59, 'Segunda Ley de Newton', '6', 13, 3),
-(60, 'Tercera ley de Newton', '7', 13, 3),
-(61, 'Equilibrio rotacional y traslacional. Fuerza y torca', '8', 13, 3),
-(62, 'Ley de la fuerza en un un resorte (Ley de Hooke)', '9', 13, 3),
-(63, 'Ley de la Gravitación Universal. Movimiento Planetario', '10', 13, 3);
-
+TRUNCATE TABLE `usuario`;
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `tema`
+-- Indices de la tabla `capitulo`
 --
-ALTER TABLE `tema`
+ALTER TABLE `capitulo`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `tema` (`tema`),
   ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `idTema` (`idTema`),
   ADD KEY `idMateria` (`idMateria`);
 
 --
@@ -255,11 +333,22 @@ ALTER TABLE `materia`
   ADD UNIQUE KEY `materia` (`materia`);
 
 --
--- Indices de la tabla `capitulo`
+-- Indices de la tabla `slide`
 --
-ALTER TABLE `capitulo`
+ALTER TABLE `slide`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `idMateria` (`idMateria`),
   ADD KEY `idTema` (`idTema`),
+  ADD KEY `idCapitulo` (`idCapitulo`);
+
+--
+-- Indices de la tabla `tema`
+--
+ALTER TABLE `tema`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `tema` (`tema`),
+  ADD UNIQUE KEY `id` (`id`),
   ADD KEY `idMateria` (`idMateria`);
 
 --
@@ -267,24 +356,18 @@ ALTER TABLE `capitulo`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `capitulo`
+--
+ALTER TABLE `capitulo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+--
 -- AUTO_INCREMENT de la tabla `tema`
 --
 ALTER TABLE `tema`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
--- AUTO_INCREMENT de la tabla `capitulo`
---
-ALTER TABLE `capitulo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
---
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `tema`
---
-ALTER TABLE `tema`
-  ADD CONSTRAINT `capitulo_ibfk_1` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `capitulo`
@@ -292,3 +375,17 @@ ALTER TABLE `tema`
 ALTER TABLE `capitulo`
   ADD CONSTRAINT `parte_ibfk_1` FOREIGN KEY (`idTema`) REFERENCES `tema` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `parte_ibfk_2` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `slide`
+--
+ALTER TABLE `slide`
+  ADD CONSTRAINT `slide_ibfk_1` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `slide_ibfk_2` FOREIGN KEY (`idTema`) REFERENCES `tema` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `slide_ibfk_3` FOREIGN KEY (`idCapitulo`) REFERENCES `capitulo` (`id`);
+
+--
+-- Filtros para la tabla `tema`
+--
+ALTER TABLE `tema`
+  ADD CONSTRAINT `capitulo_ibfk_1` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
